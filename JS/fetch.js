@@ -13,18 +13,3 @@ const fetch = (url, cb) => {
   xhr.send();
 };
 
-const generateCards = (data) => {
-  let space = [];
-  for(let i = 0; i < 10; i++){
-    let random = Math.floor(Math.random() * data.length);
-    if(space.includes(random)){
-      i--
-      continue;
-    }else {
-      handleDom(data[random], random, data)
-    }
-    space.push(random);
-  }
-}
-
-fetch(url1, generateCards);
