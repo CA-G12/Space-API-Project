@@ -1,7 +1,8 @@
 //Accessing the HTML elements
 let spaceContainer = document.querySelector("#space-container .container");
 
-const handleDom = (dataRandom, index, data) => {
+//Making handleDom function to create cards
+function handleDom(dataRandom, index, data) {
   //Create the card div
   let createDiv = document.createElement("div");
   createDiv.classList = "card";
@@ -23,6 +24,7 @@ const handleDom = (dataRandom, index, data) => {
   createDiv.addEventListener("click", () => {
     let id = index;
     let sendData = data[id];
+    console.log(sendData);
     let obj = {
       name: sendData.name,
       success: sendData.success,
@@ -31,13 +33,16 @@ const handleDom = (dataRandom, index, data) => {
       details: sendData.details,
       Fire: sendData.static_fire_date_utc,
       launchDate: sendData.date_local,
-      youtubeLink: sendData.webcast,
-      article: sendData.article,
-      wiki: sendData.wikipedia,
+      youtubeLink: sendData.links.webcast,
+      article: sendData.links.article,
+      wiki: sendData.links.wikipedia
     };
-
+    document.querySelector("#info").style.display = "flex";
+    document.querySelector('#space-container').style.display = "none"
+    showDetails(obj);
     let dataArr = JSON.parse(localStorage.getItem("flights") || "[]");
-    dataArr.push(obj);
+    dataArr[0] = obj;
+
     localStorage.setItem("flights", JSON.stringify(dataArr));
   });
-};
+}
