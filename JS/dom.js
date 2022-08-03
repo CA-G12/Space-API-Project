@@ -1,30 +1,29 @@
-//Accessing the HTML elements
-let spaceContainer = document.querySelector("#space-container .container");
+const spaceContainer = document.querySelector("#space-container .container");
+const state = [];
+const OFFSET = 10;
+let limit = OFFSET;
 
 //Making handleDom function to create cards
-function handleDom(dataRandom, index, data) {
-  //Create the card div
+function handleDom(data) {
   let createDiv = document.createElement("div");
   createDiv.classList = "card";
   spaceContainer.appendChild(createDiv);
 
-  //Create the card elements
   let img = document.createElement("img");
-  img.src = dataRandom["links"]["patch"]["small"];
+  img.src = data["links"]["patch"]["small"];
   img.setAttribute("referrerpolicy", "no-referrer");
-  img.alt = dataRandom["name"];
+  img.alt = data["name"];
   createDiv.appendChild(img);
 
   let heading = document.createElement("h3");
-  heading.textContent = dataRandom["name"];
+  heading.textContent = data["name"];
   createDiv.appendChild(heading);
-  createDiv.setAttribute("data-id", index);
+  createDiv.setAttribute("data-id", data.id);
 
-  //Add eventListener to the createDiv
   createDiv.addEventListener("click", () => {
-    let id = index;
-    let sendData = data[id];
-    console.log(sendData);
+    let id = data.id;
+    let sendData = data;
+
     let obj = {
       name: sendData.name,
       success: sendData.success,
@@ -35,10 +34,10 @@ function handleDom(dataRandom, index, data) {
       launchDate: sendData.date_local,
       youtubeLink: sendData.links.webcast,
       article: sendData.links.article,
-      wiki: sendData.links.wikipedia
+      wiki: sendData.links.wikipedia,
     };
     document.querySelector("#info").style.display = "flex";
-    document.querySelector('#space-container').style.display = "none"
+    document.querySelector("#space-container").style.display = "none";
     showDetails(obj);
     let dataArr = JSON.parse(localStorage.getItem("flights") || "[]");
     dataArr[0] = obj;
@@ -46,3 +45,39 @@ function handleDom(dataRandom, index, data) {
     localStorage.setItem("flights", JSON.stringify(dataArr));
   });
 }
+const input = document.getElementById("search");
+
+input.addEventListener("input", (e) => {
+  const { value } = e.target;
+
+  if (value) {
+    const filteredResults = state.filter(({name}) => name.toLowerCase().includes(e.target.value.toLowerCase()))
+
+    limit = OFFSET
+    generateCards(filteredResults.slice(0, limit))
+  }
+});
+
+const show = document.querySelector('#show-more');
+
+show.addEventListener('click', ()=> {
+  limit += OFFSET
+  generateCards(state.slice(0, limit));
+})
+
+const generateCards = (data) => {
+  spaceContainer.textContent = ''
+
+  // return randomized list
+  data
+    .sort(() => Math.random() - 0.5)
+    .slice(0, limit)
+    .forEach((element) => {
+      handleDom(element);
+    });
+};
+
+fetch(url1, (res) => {
+  state.push(...res);
+  generateCards(res);
+});

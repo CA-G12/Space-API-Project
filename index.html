@@ -16,7 +16,7 @@
     <header>
       <img src="/Img/SpaceX-Logo.png" alt="Space-X-photo" />
       <div>
-        <input type="text" placeholder="search..." />
+        <input type="text" placeholder="search..." id="search" value=""/>
         <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
       </div>
     </header>
@@ -26,7 +26,7 @@
       <section id="space-container">
         <h1>The Latest Launches</h1>
         <div class="container"></div>
-        <a href="#">Show more</a>
+        <a href="#" id="show-more">Show more</a>
       </section>
       <section id="info">
         <div class="container">
@@ -68,8 +68,8 @@
       </div>
     </footer>
     <!--End of footer section-->
+    <script src="./JS/fetch.js"></script>
     <script src="./JS/detailsDom.js"></script>
     <script src="./JS/dom.js"></script>
-    <script src="./JS/fetch.js"></script>
-  </body>
+</body>
 </html>
