@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/CSS/index.css" />
     <title>Space X API Project</title>
-</head>
-<body>
-    <header></header>
+  </head>
+  <body>
+    <header>
+      <img src="/Img/SpaceX-Logo.png" alt="Space-X-photo" />
+      <div>
+        <input type="text" placeholder="search..." />
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+      </div>
+    </header>
     <main>
-        <section id="space-container"></section>
-        <section id="techport"></section>
+      <section id="space-container">
+        <h1>The Latest Launches</h1>
+        <div class="container"></div>
+      </section>
+      <section id="techport"></section>
     </main>
-    <footer></footer>
+    <footer>
+      <img src="./Img/SpaceX-Logo.png" alt="logo" />
+      <ul>
+        <li>Privacy</li>
+        <li>Office of inspector General</li>
+        <li>Office of Special Counsel</li>
+        <li>Contact Us</li>
+      </ul>
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </footer>
     <script src="/JS/fetch.js"></script>
     <script src="/JS/dom.js"></script>
-</body>
+  </body>
 </html>
