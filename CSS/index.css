@@ -129,6 +129,54 @@ main {
 }
 /*End of launches section style*/
 
+#info {
+  margin: 2rem 0;
+  width: 80%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #181818;
+  display: none;
+}
+
+#info .container {
+  padding: 5rem 1.5rem;
+  width: 100%;
+  display: flex;
+  background: rgba(51, 51, 51, 0.2);
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+}
+
+#info .container .card {
+  margin-left: 2rem;
+}
+
+#info .container .card h4 {
+  padding: 1rem 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+#info .container .card h4 span {
+  padding-left: 0.5rem;
+  font-weight: 200;
+}
+
+#info .container img {
+  background-color: #d9d9d9;
+  padding: 5.5rem 2.5rem;
+}
+
+.fa-youtube {
+  color: #ff0000;
+}
+.fa-wikipedia-w,
+.fa-newspaper {
+  color: #e6e6e6;
+}
+
 /*Start of footer section style */
 footer {
   width: 100%;
