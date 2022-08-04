@@ -1,5 +1,4 @@
 let title = document.querySelector("#info .container .card h1");
-// console.log(title);
 let spaceNumber = document.querySelector(".flight-number");
 let launchDate = document.querySelector(".launch-date");
 let fireDate = document.querySelector(".fire-date");

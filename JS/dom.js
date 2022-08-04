@@ -3,7 +3,6 @@ const state = [];
 const OFFSET = 10;
 let limit = OFFSET;
 
-//Making handleDom function to create cards
 function handleDom(data) {
   let createDiv = document.createElement("div");
   createDiv.classList = "card";
@@ -46,28 +45,35 @@ function handleDom(data) {
   });
 }
 const input = document.getElementById("search");
-
 input.addEventListener("input", (e) => {
   const { value } = e.target;
 
   if (value) {
-    const filteredResults = state.filter(({name}) => name.toLowerCase().includes(e.target.value.toLowerCase()))
-
-    limit = OFFSET
-    generateCards(filteredResults.slice(0, limit))
+    const filteredResults = state.filter(({ name }) =>
+      name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    limit = OFFSET;
+    generateCards(filteredResults.slice(0, limit));
   }
 });
 
-const show = document.querySelector('#show-more');
-
-show.addEventListener('click', ()=> {
-  limit += OFFSET
+const show = document.querySelector("#show-more");
+show.addEventListener("click", () => {
+  limit += OFFSET;
   generateCards(state.slice(0, limit));
+});
+
+
+let loader = document.querySelector('.loader')
+window.addEventListener('load', () => {
+  setTimeout(() =>{
+    loader.style.display = 'none'
+  }, 2000)
 })
 
-const generateCards = (data) => {
-  spaceContainer.textContent = ''
 
+const generateCards = (data) => {
+  spaceContainer.textContent = "";
   // return randomized list
   data
     .sort(() => Math.random() - 0.5)

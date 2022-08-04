@@ -8,13 +8,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     />
+    <link rel = "icon" href = 
+    "https://cdn-icons-png.flaticon.com/512/3049/3049498.png" 
+            type = "image/x-icon">
     <link rel="stylesheet" href="./CSS/index.css" />
-    <title>Space X API Project</title>
+    <title>SpaceX</title>
   </head>
   <body>
+    <div class="loader"></div>
     <!--Start of header section-->
     <header>
-      <img src="./Img/SpaceX-Logo.png" alt="Space-X-photo" />
+      <a href="./index.html"><img src="./Img/SpaceX-Logo.png" alt="Space-X-photo" /></a>
       <div>
         <input type="text" placeholder="search..." id="search" value=""/>
         <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -25,7 +29,6 @@
       <!--Start of space section-->
       <section id="space-container">
         <h1>The Latest Launches</h1>
-        <div class="container"></div>
         <a href="#" id="show-more">Show more</a>
       </section>
       <section id="info">
