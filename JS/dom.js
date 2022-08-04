@@ -71,7 +71,6 @@ window.addEventListener('load', () => {
   }, 2000)
 })
 
-
 const generateCards = (data) => {
   spaceContainer.textContent = "";
   // return randomized list
