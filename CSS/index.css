@@ -55,6 +55,7 @@ header div a {
 
 header img {
   width: 150px;
+  cursor: pointer;
 }
 /*End of header section style */
 /*Start of launches section style*/
@@ -72,12 +73,13 @@ main {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   flex-direction: column;
   margin: 2rem 4rem;
 }
 
 #space-container .container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -96,6 +98,7 @@ main {
   height: 250px;
   border: 1px solid #ffffff;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 #space-container a {
@@ -117,6 +120,12 @@ main {
   background-color: var(--main-color);
 }
 
+#space-container p {
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
 .container .card img {
   padding: 1rem 0;
   width: 180px;
@@ -221,3 +230,13 @@ footer ul li {
   color: #f04d4a;
 }
 /*End of footer section style */
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #000
+    url("https://media0.giphy.com/media/XEhIJM6mn56c8YesMe/giphy.gif?cid=ecf05e47yvuiw8my73m2dlyzbhlw5pgn0v3zo0baeepggpoa&rid=giphy.gif&ct=g")
+    center no-repeat;
+  z-index: 1;
+}
